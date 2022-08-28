@@ -1,25 +1,10 @@
-// To find login
+// Напиши функцію logItems(items) для перебору та логування масиву
 
-const logins = ['m4ngoDoge', 'kiwidab3st', 'poly1scute', 'aj4xth3m4n'];
-const loginToFind = 'poly1scute';
-// let message = '';
-
-// Method for
-// for (let i = 0; i < logins.length; i += 1) {
-//   const login = logins[i];
-//   //   if (login !== loginToFind) {
-//   //     message = `User ${loginToFind} not found`;
-//   //   }
-//   //   message = `User ${loginToFind} found`;
-//   if (login === loginToFind) {
-//     message = `User ${loginToFind} found`;
-//     break;
-//   }
-//   message = `User ${loginToFind} not found`;
-// }
-
-const message = logins.includes(loginToFind)
-  ? `User ${loginToFind} found`
-  : `User ${loginToFind} not found`;
-
-console.log(message);
+const logItems = function (items) {
+  for (const item of items) {
+    console.log(item);
+  }
+};
+logItems(['Mango', 'Kiwi', 'Poly', 'Ajax']);
+logItems([1, 2, 3, 4, 5]);
+logItems(['клавіатура', 'наушники', 'годинник']);
