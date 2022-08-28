@@ -1,25 +1,14 @@
 // Порахувати загальну суму купівель в корзині
+// Написати функцію calculateTotalPrice
 
-const cart = [54, 28, 105, 70, 92, 17, 120];
+const calculateTotalPrice = function (items) {
+  let total = 0;
+  for (const item of items) {
+    total += item;
+  }
+  return total;
+};
 
-// 1. Створити змінну для зберігання загальної суми
-let total = 0;
-// 2. Перебрати масив
-// 3. Добавити до змінної загальної суми кожен елемент масиву
-
-// Method for..
-// for (let i = 0; i < cart.length; i += 1) {
-//   total += cart[i];
-// }
-
-// Method for...of
-for (const value of cart) {
-  total += value;
-}
-console.log('Total: ', total);
-
-// To add taxes to each element in Array should use for, not for..of(will not change elements in array)
-for (let i = 0; i < cart.length; i += 1) {
-  cart[i] = Math.round(cart[i] * 1.25);
-}
-console.log(cart);
+console.log(calculateTotalPrice([1, 2, 3]));
+console.log(calculateTotalPrice([5, 10, 15, 20]));
+console.log(calculateTotalPrice([100, 200, 300]));

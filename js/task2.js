@@ -1,29 +1,27 @@
-// To count even numbers
+// To count even numbers - calculateEvenNumbers
 const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 11];
 
-// 1. To create variable
-let total = 0;
-// 2. Перебрати масив
-for (let i = 0; i < numbers.length; i += 1) {
-  // 3. Провірити на парність
-  if (numbers[i] % 2 === 0) {
-    console.log(numbers[i]);
-    // 4. Якщо парне число, додати до суми
-    // total += numbers[i];
+const calculateEvenNumbers = function (items) {
+  let total = 0;
+  for (const item of items) {
+    if (item % 2 === 0) {
+      console.log(item);
+      total += item;
+    }
   }
-}
+  return total;
+};
 
-// for (const number of numbers) {
-//   if (number % 2 === 0) {
-//     total += number;
-//   }
-// }
-// Логіка від зворотнього!!!!
-for (const number of numbers) {
-  if (number % 2 !== 0) {
-    continue;
+const calculateOddNumbers = function (items) {
+  let total = 0;
+  for (const item of items) {
+    if (item % 2 !== 0) {
+      console.log(item);
+      total += item;
+    }
   }
-  total += number;
-}
+  return total;
+};
 
-console.log(total);
+console.log(calculateEvenNumbers(numbers));
+console.log(calculateOddNumbers(numbers));
