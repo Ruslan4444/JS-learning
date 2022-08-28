@@ -1,16 +1,10 @@
-// To write slug
+// Написати функцію slugify
 const title = 'Top 10 benefits of React framework';
+const title1 = 'Norway is one of the greatest country';
 
-// 1. Нормалізуємо рядок
-const normalizedTitle = title.toLowerCase();
-console.log(normalizedTitle);
-// 2. Розбиваємо по словах
-const words = normalizedTitle.split(' ');
-console.log(words);
-// 3. Обєднуємо в рядок з роздільним знаком
-const slug = words.join('-');
-console.log(slug);
+const slugify = function (string) {
+  return string.toLowerCase().split(' ').join('-');
+};
 
-// Or to do it in ine line
-const slug1 = title.toLowerCase().split(' ').join('-');
-console.log(slug1);
+console.log(slugify(title));
+console.log(slugify(title1));

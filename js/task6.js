@@ -1,21 +1,20 @@
-// Написати скріпт, який змінює регістр кожного символу
-const string = 'JavaScript';
-let letters = string.split('');
-let invertedString = '';
+// Написати функцію, яка змінює кожен символ рядка, змінивши регістр на протилежний - changeCase
 
-console.log(letters);
+const changeCase = function (string) {
+  const letters = string.split('');
+  console.log(letters);
+  let invertedString = '';
 
-for (const letter of letters) {
-  // old method
-  //   if (letter === letter.toLowerCase()) {
-  //     console.log(letter);
-  //     invertedString += letter.toUpperCase();
-  //   } else {
-  //     invertedString += letter.toLowerCase();
-  //   }
+  for (const letter of letters) {
+    const isInLowerCase = letter === letter.toLowerCase();
 
-  // better solution
-  const lowReg = letter === letter.toLowerCase();
-  invertedString += lowReg ? letter.toUpperCase() : letter.toLowerCase();
-}
-console.log(invertedString);
+    invertedString += isInLowerCase
+      ? letter.toUpperCase()
+      : letter.toLowerCase();
+  }
+
+  return invertedString;
+};
+
+console.log(changeCase('qweRTY'));
+console.log(changeCase('MANgo'));

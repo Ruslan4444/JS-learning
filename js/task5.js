@@ -1,41 +1,17 @@
-// To write script, to combine elements of array in a string
-const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+// Написати функцію по пошуку найменшого числа в масиві - findSmallestNumber
 
-// old method
-// let string = '';
+const findSmallestNumber = function (numbers) {
+  let smallestNumber = numbers[0];
 
-// for (const friend of friends) {
-//   string += friend + ',';
-// }
-// console.log(string);
-// console.log(string.slice(0, string.length - 1));
+  for (const number of numbers) {
+    if (number < smallestNumber) {
+      smallestNumber = number;
+    }
+  }
 
-// New method
-const string = friends.join(', ');
-console.log(string);
+  return smallestNumber;
+};
 
-// / To find login
-
-// const logins = ['m4ngoDoge', 'kiwidab3st', 'poly1scute', 'aj4xth3m4n'];
-// const loginToFind = 'poly1scute';
-// // let message = '';
-
-// // Method for
-// // for (let i = 0; i < logins.length; i += 1) {
-// //   const login = logins[i];
-// //   //   if (login !== loginToFind) {
-// //   //     message = `User ${loginToFind} not found`;
-// //   //   }
-// //   //   message = `User ${loginToFind} found`;
-// //   if (login === loginToFind) {
-// //     message = `User ${loginToFind} found`;
-// //     break;
-// //   }
-// //   message = `User ${loginToFind} not found`;
-// // }
-
-// const message = logins.includes(loginToFind)
-//   ? `User ${loginToFind} found`
-//   : `User ${loginToFind} not found`;
-
-// console.log(message);
+console.log(findSmallestNumber([3, 8, 12, -2, 15])); //-2
+console.log(findSmallestNumber([100, 54, 8, 12, 47])); //8
+console.log(findSmallestNumber([7, 21, 84, 15, 4])); //4

@@ -1,18 +1,38 @@
-// Написати скрипт по підрахунку суми двох  масивів
-const array1 = [5, 10, 15, 20];
-const array2 = [10, 20, 30];
+// Псевдомасив arguments and Array.from
 
-// 1. Записати зиінну, в якій будемо зберігати суму
-let total = 0;
-// 2. Обєднуємо два масиви
-const numbers = array1.concat(array2);
-console.log(numbers);
+const fn = function () {
+  console.log(arguments);
 
-// Цей метод не деструктивний, тобто не змінює вихідні масиви
-console.log(array1);
-console.log(array2);
-// 3. Перебираємо масив та додаємо кожен елемент до суми
-for (const number of numbers) {
-  total += number;
-}
-console.log(total);
+  // for (const arg of arguments) {
+  //   console.log(arg);
+  // }
+
+  const args = Array.from(arguments);
+
+  console.log(args);
+};
+
+const fn1 = function (...args) {
+  console.log(args);
+};
+
+const add = function (...args) {
+  console.log(args);
+  let total = 0;
+
+  for (const arg of args) {
+    total += arg;
+  }
+
+  return total;
+};
+
+fn(1, 2, 3);
+fn(1, 2, 3, 4, 5);
+fn(1, 2, 3, 4, 5, 6, 7);
+fn1(1, 2, 3);
+fn1(1, 2, 3, 4, 5);
+fn1(1, 2, 3, 4, 5, 6, 7);
+console.log(add(1, 2, 3));
+console.log(add(1, 2, 3, 4, 5));
+console.log(add(1, 2, 3, 4, 5, 6, 7));

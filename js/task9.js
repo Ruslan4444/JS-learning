@@ -1,33 +1,17 @@
-// Працюємо з колекцією карток
-// Method splice
-const cards = [
-  'Карточка-1',
-  'Карточка-2',
-  'Карточка-3',
-  'Карточка-4',
-  'Карточка-5',
-];
+// Написати функцію filterNumbers
 
-// 1. Видалення по індексу за допомогою методу indexOf
-const cardToRemove = 'Карточка-3';
-const index = cards.indexOf(cardToRemove);
-console.log(cardToRemove);
-console.log(index);
+const filterNumbers = function (array, ...args) {
+  console.log(array);
+  console.log(args);
+  const uniqueElements = [];
 
-cards.splice(index, 1);
-console.log(cards);
+  for (const element of array) {
+    console.log(args.includes(element));
+    if (args.includes(element)) {
+      uniqueElements.push(element);
+    }
+  }
+  return uniqueElements;
+};
 
-// 2. Додаємо карточку по індексу
-const cardToInsert = 'Карточка-6';
-const indexToInsert = 3;
-
-cards.splice(3, 0, cardToInsert);
-console.table(cards);
-
-// 3. Оновлення по індексу
-const cardToUpdate = 'Карточка-4';
-const indexToUpdate = cards.indexOf(cardToUpdate);
-console.log(indexToUpdate);
-
-cards.splice(indexToUpdate, 1, 'Карточка-4а');
-console.log(cards);
+console.log(filterNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8));
